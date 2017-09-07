@@ -1,0 +1,14 @@
+set term png
+
+set title "Minimalne drzewo rozpinajace dla wsi i miast Polski"
+set xlabel "Dlugosc geogr."              # opis osi x
+set ylabel "Szerokosc geogr."          # opis osi y
+
+set xrange [13:25];
+set yrange [48:56];
+
+unset key
+set output "min_tree.png"
+set datafile separator ";"
+
+plot "min_tree.txt" using 1:2:($3-$1):($4-$2) with vectors nohead, "wygenerowaneDane/lista_miast_1.txt" using 3:2 pt 5 lc rgb "cyan";

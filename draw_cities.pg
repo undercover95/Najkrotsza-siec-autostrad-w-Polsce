@@ -1,0 +1,14 @@
+set term png
+
+set title "Miasta i wsie Polski"
+set xlabel "Dlugosc geogr."              # opis osi x
+set ylabel "Szerokosc geogr."          # opis osi y
+
+set xrange [13:25];
+set yrange [48:56];
+
+unset key
+set output "cities.png"
+set datafile separator ";"
+
+plot "wygenerowaneDane/lista_miast_1.txt" using 3:2 pt 3;
